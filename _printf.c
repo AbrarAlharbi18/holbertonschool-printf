@@ -54,9 +54,6 @@ int handle_format_specifier(char specifier, va_list args)
 			return (print_string(va_arg(args, char *)));
 		case '%':
 			return (print_percent());
-		case 'd':
-		case 'i':
-			return (print_integer(va_arg(args, int)));
 		default:
 			/* If the specifier is invalid, print '%' followed */
 			return (_putchar('%') + _putchar(specifier));

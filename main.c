@@ -10,14 +10,19 @@ int main(void)
 {
 	int len, len2;
 
-	/* Test case: _printf("%d") and _printf("%i") */
-	len = _printf("Integer:[%d]\n", -1024);
-	len2 = printf("Integer:[%d]\n", -1024);
+	/* Test cases */
+	len = _printf("Character:[%c]\n", 'H');
+	len2 = printf("Character:[%c]\n", 'H');
 	_printf("Length:[%d]\n", len);
 	printf("Length:[%d]\n", len2);
 
-	len = _printf("Integer:[%i]\n", 1024);
-	len2 = printf("Integer:[%i]\n", 1024);
+	len = _printf("String:[%s]\n", "I am a string !");
+	len2 = printf("String:[%s]\n", "I am a string !");
+	_printf("Length:[%d]\n", len);
+	printf("Length:[%d]\n", len2);
+
+	len = _printf("Percent:[%%]\n");
+	len2 = printf("Percent:[%%]\n");
 	_printf("Length:[%d]\n", len);
 	printf("Length:[%d]\n", len2);
 
