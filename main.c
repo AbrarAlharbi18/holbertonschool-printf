@@ -1,3 +1,4 @@
+#include <limits.h>
 #include <stdio.h>
 #include "main.h"
 
@@ -9,12 +10,15 @@ int main(void)
 {
 	int len, len2;
 
-	/* Test case: _printf("%") */
-	len = _printf("%");
-	len2 = printf("%%");
+	/* Test case: _printf("%d") and _printf("%i") */
+	len = _printf("Integer:[%d]\n", -1024);
+	len2 = printf("Integer:[%d]\n", -1024);
+	_printf("Length:[%d]\n", len);
+	printf("Length:[%d]\n", len2);
 
-	/* Print the lengths returned by _printf and printf */
-	_printf("\nLength:[%d]\n", len);
+	len = _printf("Integer:[%i]\n", 1024);
+	len2 = printf("Integer:[%i]\n", 1024);
+	_printf("Length:[%d]\n", len);
 	printf("Length:[%d]\n", len2);
 
 	return (0);
