@@ -20,7 +20,7 @@ int _printf(const char *format, ...)
 		if (*format == '%')
 		{
 			format++;
-			if (*format == '\0')  /* Handle case where '%' is the*/
+			if (*format == '\0')  /* Handle case where '%' is the last character */
 			{
 				count += _putchar('%');
 				break;
@@ -57,7 +57,7 @@ int handle_format_specifier(char specifier, va_list args)
 		case 'r':
 			return (print_reverse(va_arg(args, char *)));
 		default:
-			/* If the specifier is invalid, print '%' by specifr*/
+			/* If the spec invalid,'%'followed by the specifier */
 			return (_putchar('%') + _putchar(specifier));
 	}
 }

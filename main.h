@@ -16,4 +16,4 @@ int print_string(char *str);
 int print_percent(void);
 int print_reverse(char *str);
 
-#endif
+#endif /* MAIN_H */

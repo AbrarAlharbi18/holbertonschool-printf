@@ -14,11 +14,11 @@ int print_reverse(char *str)
 	if (str == NULL)
 		str = "(null)";
 
-	/* Calculate the length of the string*/
+	/* Calculate the length of the string */
 	while (str[len])
 		len++;
 
-	/*Print the string in reverse*/
+	/* Print the string in reverse */
 	for (i = len - 1; i >= 0; i--)
 	{
 		count += _putchar(str[i]);
