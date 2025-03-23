@@ -7,15 +7,15 @@
  */
 int main(void)
 {
-    int len, len2;
+	int len, len2;
 
-    /* Test case: _printf("%") */
-    len = _printf("%");
-    len2 = printf("%%");
+	/* Test case: _printf("%") */
+	len = _printf("%");
+	len2 = printf("%%");
 
-    /* Print the lengths returned by _printf and printf */
-    _printf("\nLength:[%d]\n", len);
-    printf("Length:[%d]\n", len2);
+	/* Print the lengths returned by _printf and printf */
+	_printf("\nLength:[%d]\n", len);
+	printf("Length:[%d]\n", len2);
 
-    return (0);
+	return (0);
 }
