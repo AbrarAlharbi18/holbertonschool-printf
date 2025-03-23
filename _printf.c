@@ -2,7 +2,7 @@
 
 /**
  * _printf - Custom printf function
- * @format: The format string
+ * @format: Format string
  * Return: Number of characters printed
  */
 int _printf(const char *format, ...)
@@ -10,18 +10,21 @@ int _printf(const char *format, ...)
 	va_list args;
 	int count = 0;
 
+	if (!format)
+		return (-1);
+
 	va_start(args, format);
 
 	while (*format)
 	{
 		if (*format == '%')
 		{
-			format++; /* Move past the '%'*/
+			format++;
 			count += handle_format_specifier(*format, args);
 		}
 		else
 		{
-			count += write(1, format, 1); /*Print the character*/
+			count += _putchar(*format);
 		}
 		format++;
 	}
@@ -32,30 +35,23 @@ int _printf(const char *format, ...)
 
 /**
  * handle_format_specifier - Handles format specifiers
- * @specifier: The format specifier (e.g., 'c', 's', '%')
- * @args: The va_list of arguments
+ * @specifier: Format specifier character
+ * @args: va_list of arguments
  * Return: Number of characters printed
  */
 int handle_format_specifier(char specifier, va_list args)
 {
-	int count = 0;
-
 	switch (specifier)
 	{
 		case 'c':
-			count += print_char(va_arg(args, int));
-			break;
+			return (print_char(va_arg(args, int)));
 		case 's':
-			count += print_string(va_arg(args, char *));
-			break;
+			return (print_string(va_arg(args, char *)));
 		case '%':
-			count += print_percent();
-			break;
+			return (print_percent());
+		case 'r':
+			return (print_reverse(va_arg(args, char *)));
 		default:
-			count += write(1, "%", 1); /* Print the '%'*/
-			count += write(1, &specifier, 1); /*Printtheunspecie*/
-			break;
+			return (_putchar('%') + _putchar(specifier));
 	}
-
-	return (count);
 }

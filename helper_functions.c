@@ -1,41 +1,28 @@
 #include "main.h"
 
 /**
- * print_char - Prints a single character
- * @c: The character to print
- * Return: Number of characters printed (always 1)
- */
-int print_char(char c)
-{
-    return write(1, &c, 1);
-}
-
-/**
- * print_string - Prints a string
- * @str: The string to print
+ * print_reverse - Prints a string in reverse
+ * @str: String to print
  * Return: Number of characters printed
  */
-int print_string(char *str)
+int print_reverse(char *str)
 {
-    int count = 0;
+	int count = 0;
+	int len = 0;
+	int i;
 
-    if (str == NULL)
-        str = "(null)";
+	if (str == NULL)
+		str = "(null)";
 
-    while (*str)
-    {
-        count += write(1, str, 1);
-        str++;
-    }
+	/* Calculate the length of the string*/
+	while (str[len])
+		len++;
 
-    return count;
-}
+	/* Print the string in reverse*/
+	for (i = len - 1; i >= 0; i--)
+	{
+		count += _putchar(str[i]);
+	}
 
-/**
- * print_percent - Prints a percent sign
- * Return: Number of characters printed (always 1)
- */
-int print_percent(void)
-{
-    return write(1, "%", 1);
+	return (count);
 }
