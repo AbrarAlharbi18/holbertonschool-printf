@@ -18,7 +18,7 @@ int print_reverse(char *str)
 	while (str[len])
 		len++;
 
-	/* Print the string in reverse*/
+	/*Print the string in reverse*/
 	for (i = len - 1; i >= 0; i--)
 	{
 		count += _putchar(str[i]);

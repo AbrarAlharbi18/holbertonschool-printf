@@ -14,6 +14,6 @@ int _putchar(char c);
 int print_char(char c);
 int print_string(char *str);
 int print_percent(void);
-int print_reverse(char *str);  /* Add this line*/
+int print_reverse(char *str);
 
 #endif
