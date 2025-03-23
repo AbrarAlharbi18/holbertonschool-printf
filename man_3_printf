@@ -1,0 +1,70 @@
+.TH _PRINTF 3 "October 2023" "Holberton School" "Custom printf Manual"
+.SH NAME
+_printf \- Custom implementation of the printf function
+.SH SYNOPSIS
+.nf
+.B #include "main.h"
+.PP
+.BI "int _printf(const char *" format ", ...);"
+.fi
+.SH DESCRIPTION
+The
+.B _printf
+function produces output according to a format string. It is a custom implementation of the standard
+.B printf
+function and supports the following conversion specifiers:
+.TP
+.B %c
+Prints a single character.
+.TP
+.B %s
+Prints a string.
+.TP
+.B %%
+Prints a percent sign (%).
+.TP
+.B %d
+Prints a signed integer in decimal format.
+.TP
+.B %i
+Prints a signed integer in decimal format (same as %d).
+.PP
+The function returns the number of characters printed (excluding the null byte used to end output to strings). If the format string is
+.BR NULL ,
+the function returns
+.BR -1 .
+.SH RETURN VALUE
+The
+.B _printf
+function returns the number of characters printed. If an error occurs, it returns
+.BR -1 .
+.SH EXAMPLES
+To print a string and an integer:
+.PP
+.nf
+#include "main.h"
+
+int main(void)
+{
+    int len;
+
+    len = _printf("Hello, %s! The answer is %d.\\n", "World", 42);
+    _printf("Characters printed: %d\\n", len);
+    return (0);
+}
+.fi
+.PP
+Output:
+.PP
+.nf
+Hello, World! The answer is 42.
+Characters printed: 28
+.fi
+.SH SEE ALSO
+.BR printf (3)
+.SH AUTHOR
+Written by Abrar for Holberton School.
+.SH BUGS
+No known bugs. If you find any, please report them to Abrarsaadalharbi@gmail.com.
+.SH COPYRIGHT
+Copyright © 2023 Holberton School. This is free software; see the source for copying conditions. There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
